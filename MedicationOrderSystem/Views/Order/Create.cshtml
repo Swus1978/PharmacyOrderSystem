@@ -1,0 +1,22 @@
+@model MedicationOrderSystem.Models.HomeViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Create Order";
+    ViewData["HeaderTitle"] = "Create Medication Order";
+}
+
+<form id="orderForm" method="post" action="/Order/Submit">
+    <!-- Medication Name -->
+    <div class="mb-3">
+        <label for="medicationName" class="form-label">Medication Name:</label>
+        <input type="text" id="medicationName" name="medicationName" class="form-control" required>
+    </div>
+
+    <!-- Additional form fields... -->
+
+    <div class="d-flex justify-content-between">
+        <button type="reset" class="btn btn-danger">Clear</button>
+        <button type="submit" class="btn btn-success">Confirm</button>
+    </div>
+</form>

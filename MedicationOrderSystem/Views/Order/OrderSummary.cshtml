@@ -1,0 +1,18 @@
+@model MedicationOrderSystem.Models.OrderViewModel
+
+<div class="container">
+    <h2>Order Summary</h2>
+    <p>Medication Name: @Model.MedicationName</p>
+    <p>Medication Type: @Model.MedicationType</p>
+    <p>Quantity: @Model.Quantity</p>
+    <p>Distributor: @Model.Distributor</p>
+    <p>Pharmacy Branch: @Model.PharmacyBranch</p>
+
+    <!-- Form to confirm the order and POST to the Submit action -->
+    <form method="post" action="/Order/Submit">
+        <button type="submit" class="btn btn-success">Confirm Order</button>
+    </form>
+
+    <!-- Button to go back to the main page -->
+    <a href="/" class="btn btn-primary">Back to Main Page</a>
+</div>

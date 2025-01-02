@@ -1,0 +1,83 @@
+@model MedicationOrderSystem.Models.HomeViewModel
+
+@{
+    ViewData["Title"] = "Pharmacy Medication Order";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white text-center">
+        <h2>@ViewData["Title"]</h2>
+    </div>
+    <div class="card-body">
+        <form id="orderForm" method="post" action="/Order/Submit">
+            <!-- Medication Name -->
+            <div class="mb-3">
+                <label for="medicationName" class="form-label">Medication Name:</label>
+                <input type="text" id="medicationName" name="medicationName" class="form-control" required>
+            </div>
+
+            <!-- Medication Type -->
+            <div class="mb-3">
+                <label for="medicationType" class="form-label">Medication Type:</label>
+                <select id="medicationType" name="medicationType" class="form-select" required>
+                    <option value="">Select Type</option>
+                    <option value="Analgesic">Analgesic</option>
+                    <option value="Analeptic">Analeptic</option>
+                    <option value="Anesthetic">Anesthetic</option>
+                    <option value="Antacid">Antacid</option>
+                    <option value="Antidepressant">Antidepressant</option>
+                    <option value="Antibiotic">Antibiotic</option>
+                </select>
+            </div>
+
+            <!-- Quantity -->
+            <div class="mb-3">
+                <label for="quantity" class="form-label">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" class="form-control" min="1" required>
+            </div>
+
+            <!-- Distributor -->
+            <div class="mb-3">
+                <label class="form-label">Distributor:</label>
+                <div class="form-check">
+                    <input type="radio" id="cofarma" name="distributor" value="Cofarma" class="form-check-input" required>
+                    <label for="cofarma" class="form-check-label">Cofarma</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="empsephar" name="distributor" value="Empsephar" class="form-check-input">
+                    <label for="empsephar" class="form-check-label">Empsephar</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="cemefar" name="distributor" value="Cemefar" class="form-check-input">
+                    <label for="cemefar" class="form-check-label">Cemefar</label>
+                </div>
+            </div>
+
+            <!-- Pharmacy Branch -->
+            <div class="mb-3">
+                <label class="form-label">Pharmacy Branch:</label>
+                <div class="form-check">
+                    <input type="checkbox" id="mainBranch" name="pharmacyBranch" value="Main" class="form-check-input">
+                    <label for="mainBranch" class="form-check-label">Main Branch</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="secondaryBranch" name="pharmacyBranch" value="Secondary" class="form-check-input">
+                    <label for="secondaryBranch" class="form-check-label">Secondary Branch</label>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="d-flex justify-content-between">
+                <button type="reset" class="btn btn-danger">Clear</button>
+                <button type="submit" class="btn btn-success">Confirm</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+            <script src="script.js"></script>
+            <script>
+                console.log("JavaScript loaded for Pharmacy Medication Order!");
+            </script>
+}

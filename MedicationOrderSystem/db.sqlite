@@ -1,0 +1,9 @@
+CREATE TABLE Orders (
+    OrderId INTEGER PRIMARY KEY AUTOINCREMENT,
+    MedicationName TEXT NOT NULL,
+    MedicationType TEXT NOT NULL,
+    Quantity INTEGER NOT NULL,
+    Distributor TEXT NOT NULL,
+    PharmacyBranch TEXT NOT NULL,
+    OrderDate DATETIME DEFAULT CURRENT_TIMESTAMP
+);

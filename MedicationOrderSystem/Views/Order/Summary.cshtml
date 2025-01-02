@@ -1,0 +1,17 @@
+@model MedicationOrderSystem.Models.OrderViewModel
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Order Summary";
+    ViewData["HeaderTitle"] = "Order Summary";
+}
+
+<ul class="list-group">
+    <li class="list-group-item"><strong>Medication Name:</strong> @Model.MedicationName</li>
+    <li class="list-group-item"><strong>Medication Type:</strong> @Model.MedicationType</li>
+    <li class="list-group-item"><strong>Quantity:</strong> @Model.Quantity</li>
+    <li class="list-group-item"><strong>Distributor:</strong> @Model.Distributor</li>
+    <li class="list-group-item"><strong>Pharmacy Branch:</strong> @Model.PharmacyBranch</li>
+</ul>
+<a href="/Order/Create" class="btn btn-primary mt-3">Create Another Order</a>
